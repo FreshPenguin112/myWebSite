@@ -11,7 +11,10 @@ const config = {
     })
   ],
   kit: {
-    adapter: adapter()
+    adapter: adapter(),
+    prerender: {
+      handleHttpError: "warn",
+    },
   }
 };
 
