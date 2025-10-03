@@ -22,38 +22,32 @@ html, body {
     flex-direction: column;
 }
 
-// Separate bounce (vertical) and flip (horizontal) animations
-// Container handles vertical motion (bounce), image handles horizontal flip
-@keyframes bounce {
-    0% { transform: translate3d(0, 0, 0); }
-    20% { transform: translate3d(0, -48px, 0); }
-    45% { transform: translate3d(0, -78px, 0); }
-    65% { transform: translate3d(0, -38px, 0); }
-    100% { transform: translate3d(0, 0, 0); }
+@keyframes rainbow-scroll {
+    0% {
+        background-position: 0% 0%;
+    }
+    100% {
+        background-position: 200% 0%;
+    }
 }
 
-@keyframes flip {
-    0% { transform: scaleX(1); }
-    48% { transform: scaleX(1); }
-    50% { transform: scaleX(-1); }
-    100% { transform: scaleX(-1); }
-}
-
-.bouncy {
-    display: block;
-    transform-origin: center bottom;
-    will-change: transform;
-    
-}
-
-.bouncy2 {
-    display: block;
-    width: 100%;
-    height: auto;
-    transform-origin: center center;
-    backface-visibility: hidden;
-    -webkit-backface-visibility: hidden;
-    transform-style: preserve-3d;
-    will-change: transform;
-    
+.rainbow-text {
+    background-image: repeating-linear-gradient(
+        to right,
+        red,
+        orange,
+        yellow,
+        green,
+        cyan,
+        blue,
+        violet,
+        red
+    );
+    background-size: 200% auto;
+    background-position: 0% 0%;
+    animation: rainbow-scroll 6s linear infinite;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent !important;
 }
