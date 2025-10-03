@@ -7,15 +7,24 @@
         NavHamburger,
         DarkMode,
         P,
+        Avatar,
     } from "flowbite-svelte";
     import { SunSolid, MoonSolid } from "flowbite-svelte-icons";
     import { currentPage } from "$lib/stores";
 
     import Secret from "$components/secret.svelte";
+    import fresh from "$lib/assets/fresh.avif";
+    import { onMount } from "svelte";
+
+    let debug;
+    onMount(() => {
+        document.title = "Fresh's Site";
+        debug = new URLSearchParams(window.location.search).has("debug");
+    });
     let clickCount = 0;
     function handleBrandClick() {
         clickCount += 1;
-        if (clickCount >= 10) {
+        if (clickCount >= (debug ? 1 : 10)) {
             currentPage.set(Secret);
             clickCount = 0;
         }
@@ -39,3 +48,15 @@
         </DarkMode>
     </div>
 </Navbar>
+
+<div class="flex flex-col items-left mt-10">
+    <Avatar
+        src={fresh}
+        size="xl"
+        cornerStyle="rounded"
+        draggable="false"
+        (dragstart)="false;"
+        style="pointer-events:none;"
+        class="no-select"
+    ></Avatar>
+</div>

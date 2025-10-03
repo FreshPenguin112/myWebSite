@@ -1,9 +1,59 @@
-.no-select
-  -webkit-user-select: none; /* Safari */
-  -moz-user-select: none;    /* Firefox */
-  -ms-user-select: none;     /* IE10+/Edge */
-  user-select: none;
-html, body
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+.no-select {
+    -webkit-user-select: none; /* Safari */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE10+/Edge */
+    user-select: none;
+    user-drag: none; /* For Safari */
+    -webkit-user-drag: none; /* For WebKit browsers */
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overscroll-behavior-y: none;
+}
+
+.full-page {
+    min-height: 100vh;
+    width: 100vw;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+}
+
+// Separate bounce (vertical) and flip (horizontal) animations
+// Container handles vertical motion (bounce), image handles horizontal flip
+@keyframes bounce {
+    0% { transform: translate3d(0, 0, 0); }
+    20% { transform: translate3d(0, -48px, 0); }
+    45% { transform: translate3d(0, -78px, 0); }
+    65% { transform: translate3d(0, -38px, 0); }
+    100% { transform: translate3d(0, 0, 0); }
+}
+
+@keyframes flip {
+    0% { transform: scaleX(1); }
+    48% { transform: scaleX(1); }
+    50% { transform: scaleX(-1); }
+    100% { transform: scaleX(-1); }
+}
+
+.bouncy {
+    display: block;
+    transform-origin: center bottom;
+    will-change: transform;
+    
+}
+
+.bouncy2 {
+    display: block;
+    width: 100%;
+    height: auto;
+    transform-origin: center center;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    transform-style: preserve-3d;
+    will-change: transform;
+    
+}
