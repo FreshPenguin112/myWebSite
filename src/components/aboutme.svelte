@@ -65,7 +65,7 @@
   <Listgroup active items={newTabOpen(myLinks)} />
 </div>
 
-<div class="no-select flex flex-col items-center">
+<div class="no-select flex flex-col items-center mb-10">
   <P class="mb-6 text-xl text-center font-bold"><br />About Me</P>
   <P class="text-lg text-center">
     I'm <span class="text-sky-500">FreshPenguin112</span>, A {new Date(
