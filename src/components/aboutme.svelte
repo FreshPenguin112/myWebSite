@@ -38,7 +38,9 @@
         on:click={() => currentPage.set(Home)}>Home</span
     >
     <div class="flex items-center gap-2 ml-auto">
+        {#if !location.href.includes("vercel.app")}
         <a href="/jellyfin" target="_blank"><P class="hover:text-blue-700">Jellyfin</P></a>
+        {/if}
         <DarkMode class="text-lg">
             {#snippet lightIcon()}
                 <SunSolid color="yellow" />
