@@ -126,7 +126,7 @@
   <span style="cursor: pointer;" class="hover:text-blue-700" on:click={() => currentPage.set(Home)}>Home</span
   >
   <div class="flex items-center gap-2 ml-auto">
-    <a href={notVercel ? "/jellyfin" : ""} target="_blank"><P class="hover:text-blue-700">Jellyfin</P></a>
+    <a href={notVercel ? "/jellyfin" : ""} target={notVercel ? "_blank" : ""}><P class="hover:text-blue-700">Jellyfin</P></a>
     <DarkMode class="text-lg">
       {#snippet lightIcon()}
         <SunSolid color="yellow" />
