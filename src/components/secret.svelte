@@ -144,6 +144,7 @@
         on:click={() => currentPage.set(Home)}>Home</span
     >
     <div class="flex items-center gap-2 ml-auto">
+        <a href="/jellyfin"><P class="hover:text-blue-700">Jellyfin</P></a>
         <DarkMode class="text-lg">
             {#snippet lightIcon()}
                 <SunSolid color="yellow" />

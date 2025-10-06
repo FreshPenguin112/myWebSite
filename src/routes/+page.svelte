@@ -1,4 +1,4 @@
-   <script lang="js">
+<script lang="js">
     import Home from "$components/home.svelte";
     import { currentPage } from "$lib/stores";
 </script>

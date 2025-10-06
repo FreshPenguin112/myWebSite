@@ -17,5 +17,8 @@ export default defineConfig({
         warmup: {
             clientFiles: ['./src/lib/**', './src/routes/+page.svelte'],
         }
+    },
+    build: {
+        assetsInlineLimit: 16384,
     }
 });
