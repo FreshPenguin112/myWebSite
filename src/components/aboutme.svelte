@@ -20,6 +20,7 @@
   let notVercel;
   onMount(() => {
     notVercel = !location.href.includes("vercel.app");
+    document.title = "About Me";
   });
 
   function newTabOpen(links) {
@@ -34,7 +35,7 @@
   ];
 </script>
 
-<Navbar>
+<Navbar class="no-select">
   <!-- svelte-ignore a11y_no_static_element_interactions a11y_click_events_have_key_events -->
   <span style="cursor: pointer;" class="hover:text-blue-700" on:click={() => currentPage.set(Home)}>Home</span
   >

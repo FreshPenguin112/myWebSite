@@ -46,7 +46,7 @@
     }
 </script>
 
-<Navbar>
+<Navbar class="no-select">
     <!-- svelte-ignore a11y_no_static_element_interactions a11y_click_events_have_key_events -->
     <span
         style="cursor: default"
@@ -84,11 +84,10 @@
         <br />I'm FreshPenguin112(<em>freh-shh-pen-gwin-wuhn-wuhn-too</em>), a
         Software Developer and Tech Enthusiast.
         <!-- svelte-ignore a11y_no_static_element_interactions a11y_missing_attribute a11y_click_events_have_key_events -->
-        <br />Feel free to
-        <a
+        <br />Feel free to explore and learn more <a
             on:click={handleExploreClick}
-            class="underline text-blue-400 hover:text-blue-700">explore
-        </a> and learn more about me!
+            class="underline text-blue-400 hover:text-blue-700">about me
+        </a>!
     </P>
 </div>
 

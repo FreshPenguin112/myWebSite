@@ -9,7 +9,6 @@
   // DVD-style bouncing image
   let containerEl;
   let imgEl;
-  let navEl; // left for binding, but we'll use DOM query for measurements
 
   // speed multiplier (px per unit used to derive velocities)
   export let speed = 0.55;
@@ -39,11 +38,7 @@
       const h = window.innerHeight;
       const imgRect = imgEl ? imgEl.getBoundingClientRect() : { width: 80, height: 80 };
       let navRect = { bottom: 0 };
-      if (navEl && typeof navEl.getBoundingClientRect === "function") {
-        navRect = navEl.getBoundingClientRect();
-      } else if (navDom && typeof navDom.getBoundingClientRect === "function") {
-        navRect = navDom.getBoundingClientRect();
-      }
+      navRect = navDom.getBoundingClientRect();
       const left = 0;
       const top = Math.max(navRect.bottom + 8, 0);
       const right = Math.max(0, w - imgRect.width);
@@ -121,7 +116,7 @@
   });
 </script>
 
-<Navbar bind:this={navEl}>
+<Navbar class="no-select">
   <!-- svelte-ignore a11y_no_static_element_interactions a11y_click_events_have_key_events -->
   <span style="cursor: pointer;" class="hover:text-blue-700" on:click={() => currentPage.set(Home)}>Home</span
   >
@@ -138,6 +133,6 @@
   </div>
 </Navbar>
 <!-- svelte-ignore a11y-img-redundant-alt -->
-<div bind:this={containerEl} style="width: 128px; height: 128px;">
+<div bind:this={containerEl} class="no-select" style="width: 128px; height: 128px;">
   <img bind:this={imgEl} src={fresh} alt="Secret Image" style="width:100%; height:100%; display:block;" />
 </div>
