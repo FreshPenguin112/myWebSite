@@ -58,7 +58,7 @@
     </div>
 </Navbar>
 
-<div class="flex flex-col items-center mt-10">
+<div class="no-select flex flex-col items-center mt-10">
     <Avatar
         src={fresh}
         id="profile-picture"
@@ -66,7 +66,11 @@
         cornerStyle="rounded"
         draggable="false"
         style="pointer-events:none;"
-        class="no-select "
+        class="no-select"
     ></Avatar>
-    <P class="mb-6 text-xl text-center font-black">FreshPenguin112</P>
+    <P class="mb-6 text-xl text-center font-bold">FreshPenguin112</P>
+    <P class="text-lg text-center">Hey! Welcome to my Website.
+        <br />I'm FreshPenguin112(<em>freh-shh-pen-gwin-wuhn-wuhn-too</em>), a Software Developer and Tech Enthusiast.
+        <br />Feel free to explore and learn more about me!
+    </P>
 </div>

@@ -1,4 +1,4 @@
-<script lang="js">
+   <script lang="js">
     import Home from "$components/home.svelte";
     import { currentPage } from "$lib/stores";
 </script>
@@ -12,8 +12,12 @@
 
 <div class="full-page bg-gray-200 dark:bg-black dark:text-white">
     {#if $currentPage}
-        <svelte:component this={$currentPage} />
+        {#key $currentPage}
+            <svelte:component this={$currentPage} />
+        {/key}
     {:else}
-        <Home />
+        {#key 'home'}
+            <Home />
+        {/key}
     {/if}
 </div>
