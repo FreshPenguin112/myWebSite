@@ -19,7 +19,9 @@
     import { onMount } from "svelte";
 
     let debug;
+    let notVercel;
     onMount(() => {
+        notVercel = !location.href.includes("vercel.app");
         document.title = "Fresh's Site";
         document.getElementById("profile-picture").oncontextmenu = (e) => {
             e.preventDefault();
@@ -54,9 +56,7 @@
         FreshPenguin112
     </span>
     <div class="flex items-center gap-2 ml-auto">
-        {#if !location.href.includes("vercel.app")}
-        <a href="/jellyfin" target="_blank"><P class="hover:text-blue-700">Jellyfin</P></a>
-        {/if}
+        <a href={notVercel ? "/jellyfin" : ""} target="_blank"><P class="hover:text-blue-700">Jellyfin</P></a>
         <DarkMode class="text-lg">
             {#snippet lightIcon()}
                 <SunSolid color="yellow" />
