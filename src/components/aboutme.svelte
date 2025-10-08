@@ -17,9 +17,9 @@
 
   import fresh from "$lib/assets/fresh.avif";
   import { onMount } from "svelte";
-  let notVercel;
+  let isLocalProdBuild;
   onMount(() => {
-    notVercel = !location.href.includes("vercel.app");
+    isLocalProdBuild = !location.href.includes("vercel.app");
     document.title = "About Me";
   });
 
@@ -40,7 +40,7 @@
   <span style="cursor: pointer;" class="hover:text-blue-700" on:click={() => currentPage.set(Home)}>Home</span
   >
   <div class="flex items-center gap-2 ml-auto">
-    <a href={notVercel ? "/jellyfin" : ""} target={notVercel ? "_blank" : ""}><P class="hover:text-blue-700">Jellyfin</P></a>
+    <a href={isLocalProdBuild ? "/jellyfin" : ""} target={isLocalProdBuild ? "_blank" : ""}><P class="hover:text-blue-700">Jellyfin</P></a>
     <DarkMode class="text-lg">
       {#snippet lightIcon()}
         <SunSolid color="yellow" />

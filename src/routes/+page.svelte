@@ -14,11 +14,11 @@
 <div class="full-page bg-gray-200 dark:bg-black dark:text-white">
     {#if $currentPage}
         {#key $currentPage}
-            <svelte:component notVercel={data.notVercel} this={$currentPage} />
+            <svelte:component isLocalProdBuild={data.isLocalProdBuild} this={$currentPage} />
         {/key}
     {:else}
         {#key 'home'}
-            <Home notVercel={data.notVercel} />
+            <Home isLocalProdBuild={data.isLocalProdBuild} />
         {/key}
     {/if}
 </div>

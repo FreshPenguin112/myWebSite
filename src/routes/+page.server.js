@@ -1,8 +1,8 @@
 // src/routes/+page.server.ts
-import { notVercel } from '$lib/notVercel';
+import { isLocalProdBuild } from '$lib/isLocalProdBuild';
 
 export function load() {
   return {
-    notVercel
+    isLocalProdBuild
   };
 }

@@ -1,5 +1,5 @@
 <script lang="js">
-    export let notVercel;
+    export let isLocalProdBuild;
     import {
         Navbar,
         NavBrand,
@@ -58,7 +58,7 @@
         FreshPenguin112
     </span>
     <div class="flex items-center gap-2 ml-auto">
-        {#if notVercel}
+        {#if isLocalProdBuild}
             <a href="/jellyfin" target="_blank">
                 <P class="hover:text-blue-700">Jellyfin</P>
             </a>
