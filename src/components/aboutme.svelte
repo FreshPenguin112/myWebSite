@@ -19,7 +19,6 @@
     import fresh from "$lib/assets/fresh.avif";
     import { onMount } from "svelte";
     onMount(() => {
-        isLocalProdBuild = !location.href.includes("vercel.app");
         document.title = "About Me";
     });
 
