@@ -1,6 +1,7 @@
 <script lang="js">
     import Home from "$components/home.svelte";
     import { currentPage } from "$lib/stores";
+    export let data;
 </script>
 
 <svelte:head>
@@ -13,11 +14,11 @@
 <div class="full-page bg-gray-200 dark:bg-black dark:text-white">
     {#if $currentPage}
         {#key $currentPage}
-            <svelte:component this={$currentPage} />
+            <svelte:component notVercel={data.notVercel} this={$currentPage} />
         {/key}
     {:else}
         {#key 'home'}
-            <Home />
+            <Home notVercel={data.notVercel} />
         {/key}
     {/if}
 </div>

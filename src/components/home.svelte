@@ -1,10 +1,9 @@
-<script context="module" lang="ts">
-  // This code only runs on the server at build time
-  import { VERCEL } from '$env/static/private';
-  export const notVercel = !VERCEL;
+<script lang="js">
+  export let notVercel;
 </script>
 
-<script lang="ts">
+
+<script lang="js">
   import {
     Navbar,
     NavBrand,
@@ -23,8 +22,6 @@
   import AboutMe from "$components/aboutme.svelte";
   import fresh from "$lib/assets/fresh.avif";
   import { onMount } from "svelte";
-
-  export let notVercel: boolean; // Get from module context
 
   let debug;
   onMount(() => {
