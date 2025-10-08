@@ -1,5 +1,5 @@
 // src/routes/+page.server.ts
-import { notVercel } from '$lib/server/env';
+import { notVercel } from '$lib';
 
 export function load() {
   return {
