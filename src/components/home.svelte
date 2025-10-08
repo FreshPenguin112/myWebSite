@@ -19,9 +19,10 @@
   import { onMount } from "svelte";
 
   let debug;
-  let notVercel;
+  //let notVercel;
+  const notVercel = import.meta.env.VERCEL === undefined;
   onMount(() => {
-    notVercel = !location.href.includes("vercel.app");
+    //notVercel = !location.href.includes("vercel.app");
     document.title = "Fresh's Site";
     document.getElementById("profile-picture").oncontextmenu = (e) => {
       e.preventDefault();
@@ -52,9 +53,10 @@
     FreshPenguin112
   </span>
   <div class="flex items-center gap-2 ml-auto">
+    {#if notVercel}
     <a href={notVercel ? "/jellyfin" : ""} target={notVercel ? "_blank" : ""}
       ><P class="hover:text-blue-700">Jellyfin</P></a
-    >
+    >{/if}
     <DarkMode class="text-lg">
       {#snippet lightIcon()}
         <SunSolid color="yellow" />
@@ -76,7 +78,7 @@
     style="pointer-events:none;"
     class="no-select"
   ></Avatar>
-  <P class="mb-6 text-xl text-center font-bold">FreshPenguin112</P>
+  <P class="mb-6 mt-6 text-xl text-center font-bold">FreshPenguin112</P>
   <P class="text-lg text-center"
     >Hey! Welcome to my Website!
     <br />I'm FreshPenguin112(<em>freh-shh-pen-gwin-wuhn-wuhn-too</em>), a Software Developer and Tech
