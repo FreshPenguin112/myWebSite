@@ -27,7 +27,9 @@
     }
 
     let myLinks = [
-        { name: "GitHub", href: "https://github.com/FreshPenguin112" },
+        { 
+            name: "GitHub", 
+            href: "https://github.com/FreshPenguin112" },
         {
             name: "Discord",
             href: "https://discordapp.com/users/712497713043734539",
